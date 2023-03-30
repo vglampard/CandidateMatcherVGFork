@@ -4,8 +4,9 @@ import CandidateDisplay from "./components/CandidateDisplay/CandidateDisplay";
 import Input from "./components/Input/Input";
 
 export function App() {
-  const [requiredSkills, setRequiredSkills] = useState(["AWS"]);
-  console.log(requiredSkills, "Skills");
+  const [requiredSkills, setRequiredSkills] = useState([]);
+
+  //console.log(requiredSkills, "Skills");
 
   return (
     <div className="bg-red-100 w-full h-100vh">
