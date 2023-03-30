@@ -7,7 +7,7 @@ export default function CandidateDisplay() {
     <div className="p-4">
       {candidatesList.map((candidate) => {
         return (
-          <div className="bg-yellow-100">
+          <div className="bg-slate-100 w-[70%] flex flex-cols justify-center rounded">
             <Candidate
               name={candidate.name}
               email={candidate.email}
