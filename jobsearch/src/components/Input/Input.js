@@ -7,7 +7,6 @@ export default function Input({ requiredSkills, setRequiredSkills }) {
   }
 
   function handleChange(e) {
-    console.log(e.target.options);
     const options = e.target.options;
     const selectedValues = [];
     for (let i = 0; i < options.length; i++) {
