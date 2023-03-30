@@ -33,11 +33,11 @@ export default function Input({ requiredSkills, setRequiredSkills }) {
   }
 
   return (
-    <form className="w-1/3 bg-green-100 m-2 flex-1" onSubmit={eventHandler}>
-      <label for="skills">Choose a skill:</label>
+    <form className="w-1/3 bg-slate-700 rounded m-2 flex-1 p-2" onSubmit={eventHandler}>
+      <label for="skills" className="text-white uppercase">Choose a skill: </label>
       <select
         id="skills"
-        className="w-30"
+        className="w-40 rounded"
         value={requiredSkills}
         onChange={handleChange}
         default=""
