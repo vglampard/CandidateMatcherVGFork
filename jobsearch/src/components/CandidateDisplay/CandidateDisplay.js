@@ -9,10 +9,7 @@ export default function CandidateDisplay() {
         return (
           <div className="bg-slate-100 w-[70%] flex flex-cols justify-center rounded">
             <Candidate
-              name={candidate.name}
-              email={candidate.email}
-              skills={candidate.skills}
-              availability={candidate.availability}
+              candidate={candidate}
             />
           </div>
         );

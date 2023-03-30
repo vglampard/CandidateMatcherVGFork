@@ -21,36 +21,31 @@
 
 // WE WANT: array of candidates with their match suitability tso we can display
 
-export function candidateMatch(candidates, requiredSkills) {
+export function candidateMatch(candidates, requiredSkills, setCandidates) {
     let candidatesAssessed = [];
-    console.log(requiredSkills, "Skills");
-    console.log(candidates, "candidates");
-  
-    if (candidates && candidates.length) {
+
       for (let i = 0; i < candidates.length; i++) {
         candidatesAssessed.push(areTheySuitable(candidates[i], requiredSkills));
       }
-    }
-    // console.log("candidatesAssessed", candidatesAssessed);
-    return candidatesAssessed;
+    console.log("CA:", candidatesAssessed)
+    setCandidates(candidatesAssessed)
+    // return candidatesAssessed;
   }
   
   export function areTheySuitable(candidate, requiredSkills) {
-    // console.log(requiredSkills, "Skills");
-    // console.log(candidate, "candidates");
-    // add 2 extra properties to the candidate object: matchSkill, notMatchSkills
-    // this will allow us to see how suitable they are
+
     let skillsMatch = [];
-  
-    if (requiredSkills && requiredSkills.length) {
-      for (let i = 0; i < requiredSkills.length; i++) {
-        if (candidate.skills.includes(requiredSkills[i])) {
-          skillsMatch.push(requiredSkills[i]);
+  let skillsNotMatch = []
+
+      for (let i = 0; i < candidate.skills.length; i++) {
+        if (requiredSkills.includes(candidate.skills[i])) {
+          skillsMatch.push(candidate.skills[i]);
           // console.log(skillsMatch, "skillsMatch");
-        }
+        } else skillsNotMatch.push(candidate.skills[i])
       }
-    }
+    
     candidate["match"] = skillsMatch;
-    console.log("candidateFiltered", candidate);
+    candidate["extra"] = skillsNotMatch
+    // console.log("candidateFiltered", candidate);
     return candidate;
   }

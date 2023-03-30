@@ -10,9 +10,9 @@ export function App() {
   const [requiredSkills, setRequiredSkills] = useState([]);
   const [candidates, setCandidates] = useState(candidatesList);
 
-  //console.log(requiredSkills, "Skills");
-  function handleClick(candidates, requiredSkills) {
-    candidateMatch(candidates, requiredSkills);
+  console.log(candidates, "CANDIDASTE ASSESED?");
+  function handleClick(candidates, requiredSkills, setCandidates) {
+    candidateMatch(candidates, requiredSkills, setCandidates);
   }
 
   return (
@@ -25,7 +25,7 @@ export function App() {
       />
        <button
         onClick={() =>
-          handleClick(candidates, requiredSkills)
+          handleClick(candidates, requiredSkills, setCandidates)
         }
       >
         Get your candidate
