@@ -7,7 +7,7 @@ export default function CandidateDisplay() {
     <div className="p-4">
       {candidatesList.map((candidate) => {
         return (
-          <div className="bg-slate-100 w-[70%] flex flex-cols justify-center rounded">
+          <div className="bg-slate-100 w-[90%] flex flex-cols justify-center rounded">
             <Candidate
               candidate={candidate}
             />

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Input({ requiredSkills, setRequiredSkills }) {
   function eventHandler(e) {
     e.preventDefault();
-    console.log("requiredSkills", requiredSkills);
   }
 
   function handleChange(e) {
