@@ -10,13 +10,12 @@ export function App() {
   const [requiredSkills, setRequiredSkills] = useState([]);
   const [candidates, setCandidates] = useState(candidatesList);
 
-  console.log(candidates, "CANDIDASTE ASSESED?");
   function handleClick(candidates, requiredSkills, setCandidates) {
     candidateMatch(candidates, requiredSkills, setCandidates);
   }
 
   return (
-    <div className="bg-slate-400 w-full h-100vh p-10 flex flex-col ">
+    <div className="bg-slate-100 w-full h-100vh p-10 flex flex-col justify-center items-center">
       <Hero/>
       <Input
         requiredSkills={requiredSkills}
@@ -30,7 +29,7 @@ export function App() {
       >
         Get your candidate
       </button>
-      <CandidateDisplay />
+      <CandidateDisplay requiredSkills={requiredSkills}/>
     </div>
   );
 }

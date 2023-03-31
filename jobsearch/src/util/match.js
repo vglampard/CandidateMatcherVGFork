@@ -27,9 +27,8 @@ export function candidateMatch(candidates, requiredSkills, setCandidates) {
       for (let i = 0; i < candidates.length; i++) {
         candidatesAssessed.push(areTheySuitable(candidates[i], requiredSkills));
       }
-    console.log("CA:", candidatesAssessed)
+      
     setCandidates(candidatesAssessed)
-    // return candidatesAssessed;
   }
   
   export function areTheySuitable(candidate, requiredSkills) {
@@ -38,14 +37,11 @@ export function candidateMatch(candidates, requiredSkills, setCandidates) {
   let skillsNotMatch = []
 
       for (let i = 0; i < candidate.skills.length; i++) {
-        if (requiredSkills.includes(candidate.skills[i])) {
-          skillsMatch.push(candidate.skills[i]);
-          // console.log(skillsMatch, "skillsMatch");
-        } else skillsNotMatch.push(candidate.skills[i])
+        requiredSkills.includes(candidate.skills[i]) ? 
+          skillsMatch.push(candidate.skills[i]): skillsNotMatch.push(candidate.skills[i])
       }
     
     candidate["match"] = skillsMatch;
     candidate["extra"] = skillsNotMatch
-    // console.log("candidateFiltered", candidate);
     return candidate;
   }
