@@ -31,8 +31,13 @@ export default function Input({ requiredSkills, setRequiredSkills }) {
   }
 
   return (
-    <form className=" bg-slate-700 rounded m-2 flex-1 p-2" onSubmit={eventHandler}>
-      <label for="skills" className="text-white uppercase">Choose a skill: </label>
+    <form
+      className=" bg-slate-700 rounded m-2 flex-1 p-2"
+      onSubmit={eventHandler}
+    >
+      <label for="skills" className="text-white uppercase">
+        Choose a skill:{" "}
+      </label>
       <select
         id="skills"
         className="w-40 rounded"
