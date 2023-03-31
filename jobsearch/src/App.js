@@ -26,12 +26,12 @@ export function App() {
       />
       {requiredSkills.length > 0 && (
         <>
-          <button
+          <button className=" p-2 rounded drop-shadow-lg bg-slate-700 text-white uppercase"
             onClick={() =>
               handleClick(candidates, requiredSkills, setCandidates)
             }
           >
-            Get your candidate
+            Match candidates
           </button>
           {showCandidates && <CandidateDisplay requiredSkills={requiredSkills} /> }
          

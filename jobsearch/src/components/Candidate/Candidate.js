@@ -16,31 +16,39 @@ export default function Candidate({ candidate, requiredSkills }) {
           : "bg-orange-300"
       } `}
     >
-      <div className="flex w-[100%] gap-4 items-stretch ">
+      <div className="flex w-[100%] gap-4 items-center ">
         <button onClick={showCandidateMatches}>+</button>
         <p className=" m-2 rounded uppercase font-bold text-slate-800">
           {name}
         </p>
+        <div className="w-full flex justify-end">
+        <p className="text-sm ">{availability}</p>
+        </div >
       </div>
 
       <div className="flex gap-8 flex-wrap w-[100%] text-sm">
         {showMatch && (
-          <div className="w-[100%] bg-slate-50 rounded m-3">
+          <div className="w-[90%] bg-slate-50 rounded m-3">
             <p className="bg-white m-1 p-2">Contact: {email}</p>
             <div className=" m-1 p-2 flex-col w-full flex gap-3 rounded">
               {match && match.length > 0 && (
                 <div className="flex items-center ">
-             <p>✅</p>
+                  <p>✅</p>
                   <div className="flex gap-2 p-2 bg-green-50">
                     {match.map((match) => (
-                      <p>{match}</p>
+                      <p className="bg-slate-200 rounded px-1">{match}</p>
                     ))}
                   </div>
                 </div>
               )}
-              <div className="flex gap-2 p-2">
+              <div className="flex gap-2 p-2 flex-wrap ">
                 <p>❓</p>
-                {showMatch && extra.map((match) => <p>{match}</p>)}
+                <div className="flex gap-2 p-2  flex-wrap"  >
+                {showMatch &&
+                  extra.map((match) => (
+                    <p className="bg-slate-200 rounded px-1">{match}</p>
+                  ))}
+                  </div>
               </div>
             </div>
           </div>
