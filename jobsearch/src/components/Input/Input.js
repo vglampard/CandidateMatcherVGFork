@@ -37,7 +37,7 @@ export default function Input({ requiredSkills, setRequiredSkills }) {
       onSubmit={eventHandler}
     >
       <label for="skills" className="text-white uppercase">
-        Choose a skill:{" "}
+        Skills Required:{" "}
       </label>
       <select
         id="skills"

@@ -9,27 +9,34 @@ import { candidateMatch } from "./util/match";
 export function App() {
   const [requiredSkills, setRequiredSkills] = useState([]);
   const [candidates, setCandidates] = useState(candidatesList);
+  const [showCandidates, setShowCandidates] = useState(false)
 
   function handleClick(candidates, requiredSkills, setCandidates) {
     candidateMatch(candidates, requiredSkills, setCandidates);
+    setShowCandidates(true);
   }
 
   return (
     <div className="bg-slate-100 w-full h-100vh p-10 flex flex-col justify-center items-center">
-      <Hero/>
+      <Hero />
       <Input
         requiredSkills={requiredSkills}
         setRequiredSkills={setRequiredSkills}
         candidates={candidates}
-      />{requiredSkills.length>0 &&   <button
-        onClick={() =>
-          handleClick(candidates, requiredSkills, setCandidates)
-        }
-      >
-        Get your candidate
-      </button>}
-     
-      <CandidateDisplay requiredSkills={requiredSkills}/>
+      />
+      {requiredSkills.length > 0 && (
+        <>
+          <button
+            onClick={() =>
+              handleClick(candidates, requiredSkills, setCandidates)
+            }
+          >
+            Get your candidate
+          </button>
+          {showCandidates && <CandidateDisplay requiredSkills={requiredSkills} /> }
+         
+        </>
+      )}
     </div>
   );
 }
