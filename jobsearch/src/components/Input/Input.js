@@ -21,10 +21,9 @@ export default function Input({ requiredSkills, setRequiredSkills }) {
 
   function handleDelete(e) {
     let newArray = [];
-    const index = requiredSkills.indexOf(e.target.value);
+    // const index = requiredSkills.indexOf(e.target.value);
 
     for (let i of requiredSkills) {
-      console.log("i: ", i);
       if (i !== e.target.value) newArray.push(i);
     }
 
