@@ -1,4 +1,5 @@
 import React from "react";
+import { OPTIONS } from "../../util/options";
 
 export default function Input({ requiredSkills, setRequiredSkills }) {
   function eventHandler(e) {
@@ -44,12 +45,8 @@ export default function Input({ requiredSkills, setRequiredSkills }) {
         value={requiredSkills}
         onChange={handleChange}
         default=""
-      >
-        <option value=""></option>
-        <option value="JavaScript">JavaScript</option>
-        <option value="React">React</option>
-        <option value="CSS">CSS</option>
-        <option value="HTML">HTML</option>
+      >{OPTIONS.map((option)=>{return (<option value={option}>{option}</option>)})}
+       
       </select>
       {requiredSkills &&
         requiredSkills.map((skill) => (

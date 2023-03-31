@@ -21,14 +21,14 @@ export function App() {
         requiredSkills={requiredSkills}
         setRequiredSkills={setRequiredSkills}
         candidates={candidates}
-      />
-       <button
+      />{requiredSkills.length>0 &&   <button
         onClick={() =>
           handleClick(candidates, requiredSkills, setCandidates)
         }
       >
         Get your candidate
-      </button>
+      </button>}
+     
       <CandidateDisplay requiredSkills={requiredSkills}/>
     </div>
   );
