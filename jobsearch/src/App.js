@@ -5,6 +5,8 @@ import Hero from "./components/Hero/Hero";
 import Input from "./components/Input/Input";
 import { candidatesList } from "./candidatesData/candidatesList";
 import { candidateMatch } from "./util/match";
+import AddJob from "./components/AddJob/AddJob";
+import JobDisplay from "./components/JobDisplay/JobDisplay";
 
 export function App() {
   const [requiredSkills, setRequiredSkills] = useState([]);
@@ -24,6 +26,7 @@ export function App() {
         setRequiredSkills={setRequiredSkills}
         candidates={candidates}
       />
+      <AddJob/>
       {requiredSkills.length > 0 && (
         <>
           <button className=" p-2 rounded drop-shadow-lg bg-slate-700 text-white uppercase"
@@ -33,10 +36,12 @@ export function App() {
           >
             Match candidates
           </button>
+          
           {showCandidates && <CandidateDisplay requiredSkills={requiredSkills} /> }
          
         </>
       )}
+      <JobDisplay className=""/>
     </div>
   );
 }
