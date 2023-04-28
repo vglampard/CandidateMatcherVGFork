@@ -6,6 +6,9 @@ export default function Candidate({ candidate, requiredSkills }) {
   function showCandidateMatches() {
     setShowMatch(!showMatch);
   }
+
+  // Need an onClick function that adds this candidate to the shortlist for the job the modal is currently displaying.
+
   return (
     <div
       className={`flex gap-3 flex-wrap m-1 w-[100%] rounded-lg p-2 drop-shadow ${
@@ -17,13 +20,13 @@ export default function Candidate({ candidate, requiredSkills }) {
       } `}
     >
       <div className="flex w-[100%] gap-4 items-center ">
-        <button onClick={showCandidateMatches}>+</button>
+        <button onClick={showCandidateMatches}>{showMatch ? "-" : "+"}</button>
         <p className=" m-2 rounded uppercase font-bold text-slate-800">
           {name}
         </p>
         <div className="w-full flex justify-end">
-        <p className="text-sm ">{availability}</p>
-        </div >
+          <p className="text-sm ">{availability}</p>
+        </div>
       </div>
 
       <div className="flex gap-8 flex-wrap w-[100%] text-sm">
@@ -43,12 +46,16 @@ export default function Candidate({ candidate, requiredSkills }) {
               )}
               <div className="flex gap-2 p-2 flex-wrap ">
                 <p>❓</p>
-                <div className="flex gap-2 p-2  flex-wrap"  >
-                {showMatch &&
-                  extra.map((match) => (
-                    <p className="bg-slate-200 rounded px-1">{match}</p>
-                  ))}
-                  </div>
+                <div className="flex gap-2 p-2  flex-wrap">
+                  {showMatch &&
+                    extra.map((match) => (
+                      <p className="bg-slate-200 rounded px-1">{match}</p>
+                    ))}
+                </div>
+                <button className="bg-yellow-200 p-2 rounded">
+                  {" "}
+                  ADD to shortlist{" "}
+                </button>
               </div>
             </div>
           </div>
