@@ -7,7 +7,7 @@ export default function AddJob() {
   return (
     <div>
 
-        <p></p>
+        <p>Add Job</p>
     </div>
   )
 }

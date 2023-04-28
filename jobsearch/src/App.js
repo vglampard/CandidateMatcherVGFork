@@ -19,7 +19,7 @@ export function App() {
   }
 
   return (
-    <div className="bg-slate-100 w-full h-100vh p-10 flex flex-col justify-center items-center">
+    <div className="w-full h-100vh p-10 flex flex-col justify-center items-center">
       <Hero />
       <Input
         requiredSkills={requiredSkills}
